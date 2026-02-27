@@ -79,7 +79,7 @@ struct AccumulateType {
 
 // Partial specialization for template template parameters (e.g., OpSum<T>)
 // For most operators, accumulation type equals element type
-template<template<typename> typename Red, typename T>
+template<template<typename> class Red, typename T>
 struct AccumulateType<Red<T>> {
   using Type = T;  // Default: same type
 };
